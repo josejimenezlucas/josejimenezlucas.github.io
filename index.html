@@ -582,6 +582,21 @@ p, li, .carry, .lede { text-wrap: pretty; }
 .edu-row .lvl.prog { color: var(--cyan); }
 .edu-row .lvl.daily { color: var(--teal); }
 .learn-right { gap: 14px; }
+
+/* career velocity: restore stacking on smaller screens */
+@media (max-width: 920px) {
+  .velocity { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .v-step { padding-right: 0; }
+  .v-step.next { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .velocity { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .v-step { padding-left: 16px; border-left: 3px solid var(--line); }
+  .v-step.now { border-left-color: var(--teal); }
+  .v-step.next { border-left: 3px dashed color-mix(in srgb, var(--teal) 55%, var(--line)); }
+  .v-step .v-bar { display: none; }
+  .v-gap { white-space: normal; }
+}
 </style>
 </head>
 <body>
